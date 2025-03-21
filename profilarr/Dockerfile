@@ -24,6 +24,7 @@ RUN mkdir -p dist/backend dist/static && \
     cp -r backend/* dist/backend/ && \
     cp backend/requirements.txt dist/
 
+# hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
 ARG PROFILARR_VERSION
@@ -44,7 +45,8 @@ COPY --from=builder /profilarr/dist/backend/app ./app
 COPY --from=builder /profilarr/dist/static ./app/static
 COPY --from=builder /profilarr/dist/requirements.txt .
 
-RUN pip3 install --no-cache-dir "cython<3.0.0" wheel && \
+
+RUN pip3 install --no-cache-dir "cython==3.0.12" "wheel==0.45.1" && \
     pip3 install --no-cache-dir --no-build-isolation "pyyaml==5.4.1" && \
     pip3 install --no-cache-dir -r requirements.txt && \
     apk del py3-pip gcc python3-dev musl-dev
