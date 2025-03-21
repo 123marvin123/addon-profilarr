@@ -35,8 +35,9 @@ RUN echo "Profilarr version: ${PROFILARR_VERSION}" && \
     echo "Build architecture: ${BUILD_ARCH}"
 
 # Install dependencies
+# hadolint ignore=DL3018
 RUN apk update && \
-    apk add --no-cache git=2.49.0-r0 python3=3.12.9-r0 tzdata=2025a-r0 py3-six=1.17.0-r0 py3-requests=2.32.3-r0 py3-pip=25.0.1-r0 gcc=14.2.0-r5 python3-dev=3.12.9-r0 musl-dev=1.2.5-r10
+    apk add --no-cache git python3 tzdata py3-six py3-requests py3-pip gcc python3-dev musl-dev
 
 WORKDIR /usr/bin/profilarr
 
