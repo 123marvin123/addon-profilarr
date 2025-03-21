@@ -45,8 +45,8 @@ COPY --from=builder /profilarr/dist/backend/app ./app
 COPY --from=builder /profilarr/dist/static ./app/static
 COPY --from=builder /profilarr/dist/requirements.txt .
 
-
-RUN pip3 install --no-cache-dir "cython==3.0.12" "wheel==0.45.1" && \
+# hadolint ignore=DL3013
+RUN pip3 install --no-cache-dir "cython<3.0.0" "wheel" && \
     pip3 install --no-cache-dir --no-build-isolation "pyyaml==5.4.1" && \
     pip3 install --no-cache-dir -r requirements.txt && \
     apk del py3-pip gcc python3-dev musl-dev
