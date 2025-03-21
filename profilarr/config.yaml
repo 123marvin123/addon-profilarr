@@ -2,7 +2,7 @@
 name: Profilarr
 version: dev
 slug: profilarr
-description: |
+description: >
   Configuration management tool for Radarr/Sonarr that automates importing
   and version control of custom formats and quality profiles.
 url: "https://dictionarry.dev/"
