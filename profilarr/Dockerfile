@@ -8,11 +8,7 @@ ARG PROFILARR_VERSION
 ARG BUILD_FROM
 ARG BUILD_ARCH
 
-RUN echo "Profilarr version: ${PROFILARR_VERSION}" && \
-    echo "Build architecture: ${BUILD_ARCH}" && \
-    echo "Build from: ${BUILD_FROM}"
-
-RUN apt-get update && apt-get install -y --no-install-recommends wget tar && \
+RUN apt-get update && apt-get install -y --no-install-recommends wget=1.21-1+deb11u1 tar=1.34+dfsg-1+deb11u1 && \
     wget --progress=dot:giga https://github.com/Dictionarry-Hub/profilarr/archive/refs/tags/${PROFILARR_VERSION}.tar.gz && \
     mkdir -p /profilarr && \
     tar -xvf ${PROFILARR_VERSION}.tar.gz -C /profilarr --strip-components=1
@@ -39,7 +35,7 @@ RUN echo "Profilarr version: ${PROFILARR_VERSION}" && \
 
 # Install dependencies
 RUN apk update && \
-    apk add --no-cache git python3 tzdata py3-six py3-requests py3-pip gcc python3-dev musl-dev
+    apk add --no-cache git=2.49.0-r0 python3=3.12.9-r0 tzdata=2025a-r0 py3-six=1.17.0-r0 py3-requests=2.32.3-r0 py3-pip=25.0.1-r0 gcc=14.2.0-r5 python3-dev=3.12.9-r0 musl-dev=1.2.5-r10
 
 WORKDIR /usr/bin/profilarr
 
@@ -49,9 +45,8 @@ COPY --from=builder /profilarr/dist/static ./app/static
 COPY --from=builder /profilarr/dist/requirements.txt .
 
 RUN pip3 install --no-cache-dir "cython<3.0.0" wheel && \
-    pip3 install --no-cache-dir --no-build-isolation "pyyaml==5.4.1"
-
-RUN pip3 install --no-cache-dir -r requirements.txt && \
+    pip3 install --no-cache-dir --no-build-isolation "pyyaml==5.4.1" && \
+    pip3 install --no-cache-dir -r requirements.txt && \
     apk del py3-pip gcc python3-dev musl-dev
 
 # Copy root filesystem
