@@ -2,13 +2,14 @@ ARG PROFILARR_VERSION=v1.0.1
 ARG BUILD_FROM
 ARG BUILD_ARCH
 
-FROM node:23-bullseye AS builder
+FROM node:23-bookworm AS builder
 
 ARG PROFILARR_VERSION
 ARG BUILD_FROM
 ARG BUILD_ARCH
 
-RUN apt-get update && apt-get install -y --no-install-recommends wget=1.21-1+deb11u1 tar=1.34+dfsg-1+deb11u1 && \
+# hadolint ignore=DL3008
+RUN apt-get update && apt-get install -y --no-install-recommends wget tar && \
     wget --progress=dot:giga https://github.com/Dictionarry-Hub/profilarr/archive/refs/tags/${PROFILARR_VERSION}.tar.gz && \
     mkdir -p /profilarr && \
     tar -xvf ${PROFILARR_VERSION}.tar.gz -C /profilarr --strip-components=1
