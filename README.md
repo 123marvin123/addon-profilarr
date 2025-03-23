@@ -15,13 +15,21 @@
 [![GitHub Activity][commits-shield]][commits]
 ![Reported Installations][installations-shield-stable]
 
-Configuration management tool for Radarr/Sonarr that automates importing and version control of custom formats and quality profiles.
+Configuration management tool for Radarr/Sonarr that automates importing and 
+version control of custom formats and quality profiles.
 
 ## About
 
-Profilarr is a powerful configuration management tool for Radarr and Sonarr that simplifies the process of importing and maintaining custom formats and quality profiles. It provides automatic synchronization with remote configuration databases, direct import to your Radarr/Sonarr instances, and git-based version control of your configurations.
+Profilarr is a powerful configuration management tool for Radarr and Sonarr 
+that simplifies the process of importing and maintaining custom formats and 
+quality profiles. It provides automatic synchronization with remote 
+configuration databases, direct import to your Radarr/Sonarr instances, and 
+git-based version control of your configurations.
 
-With Profilarr, you can easily preserve local customizations during updates and take advantage of the built-in conflict resolution system. This add-on integrates seamlessly with your Home Assistant environment, making media server management more efficient than ever.
+With Profilarr, you can easily preserve local customizations during updates and 
+take advantage of the built-in conflict resolution system. This add-on 
+integrates seamlessly with your Home Assistant environment, making media server 
+management more efficient than ever.
 
 [:books: Read the full add-on documentation][docs]
 
@@ -35,7 +43,8 @@ With Profilarr, you can easily preserve local customizations during updates and 
 
 ## Installation
 
-To install this add-on, manually add my HA-Addons repository to Home Assistant using [this GitHub repository][ha-addons] or by clicking the button below.
+To install this add-on, manually add my HA-Addons repository to Home Assistant 
+using [this GitHub repository][ha-addons] or by clicking the button below.
 
 [![Add Repository to HA][my-ha-badge]][my-ha-url]
 
