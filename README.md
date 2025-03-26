@@ -18,6 +18,13 @@
 Configuration management tool for Radarr/Sonarr that automates importing and
 version control of custom formats and quality profiles.
 
+## Installation
+
+To install this add-on, manually add my HA-Addons repository to Home Assistant
+using [this GitHub repository][ha-addons] or by clicking the button below.
+
+[![Add Repository to HA][my-ha-badge]][my-ha-url]
+
 ## About
 
 Profilarr is a powerful configuration management tool for Radarr and Sonarr
@@ -40,13 +47,6 @@ management more efficient than ever.
 - 🔧 Git-based version control of your configurations
 - ⚡ Preserve local customizations during updates
 - 🛠️ Built-in conflict resolution
-
-## Installation
-
-To install this add-on, manually add my HA-Addons repository to Home Assistant
-using [this GitHub repository][ha-addons] or by clicking the button below.
-
-[![Add Repository to HA][my-ha-badge]][my-ha-url]
 
 ## Support
 
