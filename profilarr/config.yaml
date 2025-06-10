@@ -7,7 +7,6 @@ description: >
   and version control of custom formats and quality profiles.
 url: "https://dictionarry.dev/"
 arch:
-  - armv7
   - aarch64
   - amd64
 init: false
