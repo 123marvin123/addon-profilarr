@@ -12,4 +12,4 @@ labels:
     https://github.com/123marvin123/homeassistant-addons
   org.opencontainers.image.licenses: "Apache License 2.0"
 args:
-  PROFILARR_VERSION: "v1.0.1"
+  PROFILARR_VERSION: "v1.1"
