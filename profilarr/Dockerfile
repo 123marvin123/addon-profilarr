@@ -49,7 +49,7 @@ COPY --from=builder /profilarr/dist/requirements.txt .
 
 # hadolint ignore=DL3013
 RUN pip3 install --break-system-packages --no-cache-dir "cython>=3.0.0" "wheel" && \
-    pip3 install --break-system-packages --no-cache-dir --no-build-isolation "pyyaml==5.4.1" && \
+    pip3 install --break-system-packages --no-cache-dir --no-build-isolation "pyyaml>=6.0" && \
     pip3 install --break-system-packages --no-cache-dir -r requirements.txt && \
     apk del py3-pip gcc python3-dev musl-dev
 
