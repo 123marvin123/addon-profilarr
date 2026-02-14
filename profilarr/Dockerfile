@@ -1,4 +1,4 @@
-ARG PROFILARR_VERSION=v1.0.1
+ARG PROFILARR_VERSION=v1.1
 ARG BUILD_FROM
 ARG BUILD_ARCH
 
@@ -48,8 +48,8 @@ COPY --from=builder /profilarr/dist/static ./app/static
 COPY --from=builder /profilarr/dist/requirements.txt .
 
 # hadolint ignore=DL3013
-RUN pip3 install --break-system-packages --no-cache-dir "cython<3.0.0" "wheel" && \
-    pip3 install --break-system-packages --no-cache-dir --no-build-isolation "pyyaml==5.4.1" && \
+RUN pip3 install --break-system-packages --no-cache-dir "cython>=3.0.0" "wheel" && \
+    pip3 install --break-system-packages --no-cache-dir --no-build-isolation "pyyaml>=6.0" && \
     pip3 install --break-system-packages --no-cache-dir -r requirements.txt && \
     apk del py3-pip gcc python3-dev musl-dev
 
